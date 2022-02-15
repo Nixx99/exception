@@ -1,0 +1,124 @@
+1. Write a program containing a possible exception. Use a try block to throw it and a catch block
+to handle it promptly.
+
+public class Main
+{
+  
+    public static void main (String[] args) {
+        try
+        {
+                 int n=4;
+                  int div=n/0;
+                  System.out.println("The Result is"+div);
+            
+        }
+        catch(Exception e)
+        {
+            System.out.println("Can't be devided by zero "+e);
+        }
+        
+    }
+}
+
+
+
+
+2. Write a program that illustrates the application of multiple catch statements.
+
+import java.util.Scanner;
+public class Main
+{
+    public static void main (String[] args) {
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter a value");
+        int n=Integer.parseInt(s.nextLine());
+        
+        try 
+        {
+            if(24%n==0)
+            {
+                System.out.println(n+"is factor of 24");
+            }
+        } 
+        catch(ArithmeticException e) 
+        {
+            System.out.println("Not divided by zreo "+e);
+        } 
+        catch(NumberFormatException e)
+        {
+            System.out.println("Number format Exception "+e);
+          }
+    }
+}
+
+
+
+3. Write a program that demonstrates how certain exception types are not allowed to be thrown.
+
+
+
+4. Write a program to demonstrate the concept of re-throwing an exception.
+
+public class Main
+{
+    public static void main (String[] args) {
+        try 
+        {
+            Rethr();
+        } 
+        catch(Exception e)
+        {
+            System.out.println("NullPointerException Re-thrown Exception");
+        } 
+    }    
+     static void Rethr()
+        {
+            try
+            {
+                String s=null;
+                System.out.println(s.length());
+                
+            }
+            catch(NullPointerException e)
+            {
+                System.out.println("NullPointerException caught");
+                throw e;
+            }
+        }
+        
+    }
+
+
+
+5. You will be given two integers and as input, you have to compute x/y. If x and y are not 32 bit
+signed integers or if y is zero, exception will occur and you have to report it. Read sample Input/Output
+to know what to report in case of exceptions.
+
+
+import java.util.*;
+public class Main
+{
+    public static void main (String[] args) {
+        Scanner s=new Scanner(System.in);
+        try 
+        {
+            try
+            {
+                System.out.println("Enter First number ");   
+                 int x=s.nextInt();
+                 int y=s.nextInt();
+                 System.out.println(x/y);
+            }
+            catch(InputMismatchException e)
+            {
+                System.out.println(e);   
+            }
+            
+            
+        } 
+        catch(Exception e) 
+        {
+            System.out.println(e);
+        }
+    }
+}
